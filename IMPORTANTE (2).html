@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamily Barcelos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .button {
+            padding: 25px 35px;
+            background-color: #08ffd6;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-right: 25px;
+            font-size: 18px;
+        }
+        .button:last-child {
+            margin-right: 0;
+        }
+        .button:hover {
+            background-color: #08ffd6;
+        }
+        .no-button {
+            position: absolute;
+        }
+        .rodape {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Estilos para telas menores (exemplo: celulares) */
+        @media only screen and (max-width: 600px) {
+            .button-container {
+                flex-direction: column;
+            }
+            .button {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <h1>Seja minha para sempre!</h1>
+        <button class="button" onclick="abrirLink()">Sim</button>
+        <button class="button no-button" id="noButton">Não</button>
+    </div>
+    <script>
+        const noButton = document.getElementById('noButton');
+        noButton.addEventListener('mouseover', moveButton);
+        noButton.addEventListener('touchstart', moveButton);
+
+        function moveButton() {
+            const t = window.innerWidth - noButton.clientWidth;
+            const o = window.innerHeight - noButton.clientHeight;
+            const n = Math.floor(Math.random() * t);
+            const e = Math.floor(Math.random() * o);
+            noButton.style.left = n + "px";
+            noButton.style.top = e + "px";
+        }
+
+        function abrirLink() {
+            window.location.href = "https://img.ifunny.co/images/5afce97ffc989705af73d682d1f4a5dff1ff762a3cf6dc870ca4cd8ec832b8d6_1.webp";
+        }
+    </script>
+</body>
+</html>
+
+</html>
